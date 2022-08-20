@@ -5,8 +5,23 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Piedra, papel o tijeras!</title>
+    <script>
+        let jugador = 0;
+        let pc = 2;
+        jugador = prompt("Elige 1 para Piedra, 2 para Papel o 3 para Tijera");
+        if(jugador == 1){
+            alert("Elegiste Piedra");
+        }else if(jugador == 2){
+            alert("Elegiste Papel");
+        }else if(jugador == 3){
+            alert("Elegiste Tijera");
+        }else{
+            alert("Elige una opción válida");
+        }
+        //alert("Elegiste: " + jugador);
+    </script>
 </head>
 <body>
-    
+    <h1>Piedra, papel o tijeras!</h1>
 </body>
 </html>
