@@ -7,6 +7,13 @@ let vidasEnemigo = 3;
 
 
 function iniciarJuego(){
+    
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
+    sectionSeleccionarAtaque.style.display = 'none';
+
+    let sectionBotonReiniciar = document.getElementById('reiniciar');
+    sectionBotonReiniciar.style.display = 'none';
+
     let botonMascotaJugador = document.getElementById('boton-mascota');
     botonMascotaJugador.addEventListener('click', seleccionarMascotaJugador)
     let botonFuego = document.getElementById('boton-fuego');
@@ -15,6 +22,9 @@ function iniciarJuego(){
     botonAgua.addEventListener('click', ataqueAgua);
     let botonTierra = document.getElementById('boton-tierra');
     botonTierra.addEventListener('click', ataqueTierra);
+
+    let botonReiniciar = document.getElementById('boton-reiniciar');
+    botonReiniciar.addEventListener('click', reiniciarJuego)
 }
 
 function ataqueFuego() {
@@ -88,16 +98,34 @@ function crearMensaje(){
 }
 
 function crearMensajeFinal(resultadoFinal){
+
+
     let seccionMensajes = document.getElementById('mensajes');
-
-
     let parrafo = document.createElement('p')
     parrafo.innerHTML = resultadoFinal;
 
     seccionMensajes.appendChild(parrafo);
+
+    let botonFuego = document.getElementById('boton-fuego');
+    botonFuego.disabled = true;
+    let botonAgua = document.getElementById('boton-agua');
+    botonAgua.disabled = true;
+    let botonTierra = document.getElementById('boton-tierra');
+    botonTierra.disabled = true;
+
+    let sectionBotonReiniciar = document.getElementById('reiniciar');
+    sectionBotonReiniciar.style.display = 'block';
+
+
 }
 
 function seleccionarMascotaJugador(){
+    let sectionSeleccionarMascota = document.getElementById('seleccionar-mascota')
+    sectionSeleccionarMascota.style.display = 'none';
+
+    let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
+    sectionSeleccionarAtaque.style.display = 'block';
+
     let inputHipo = document.getElementById('Hipodoge');
     let inputCapi = document.getElementById('Capipepo');
     let inputRati = document.getElementById('Ratigueya');
@@ -122,6 +150,7 @@ function seleccionarMascotaJugador(){
      else{
         alert("Debes seleccionar una mascota")
     }
+    
 
     seleccionarMascotaEnemigo();
 
@@ -140,6 +169,10 @@ function seleccionarMascotaEnemigo(){
         spanMascotaEnemigo.innerHTML = 'Ratigueya'
     }
 
+}
+
+function reiniciarJuego (){
+    location.reload();
 }
 
 function aleatorio(min, max) {
