@@ -1,4 +1,6 @@
 let ataqueJugador;
+let ataqueEnemigo;
+let resultado;
 
 
 function iniciarJuego(){
@@ -14,19 +16,54 @@ function iniciarJuego(){
 
 function ataqueFuego() {
     ataqueJugador = 'FUEGO';
-    alert(ataqueJugador);
+    ataqueAleatorioEnemigo();
 }
 
 function ataqueAgua() {
     ataqueJugador = 'AGUA';
-    alert(ataqueJugador);
+    ataqueAleatorioEnemigo();
 }
 
 function ataqueTierra() {
     ataqueJugador = 'TIERRA';
-    alert(ataqueJugador);
+    ataqueAleatorioEnemigo();
 }
 
+function ataqueAleatorioEnemigo() {
+    let ataqueAleatorio = aleatorio(1,3);
+    if(ataqueAleatorio == 1){
+        ataqueEnemigo = 'FUEGO';
+    } else if(ataqueAleatorio == 2){
+        ataqueEnemigo = 'AGUA';
+    } else {
+        ataqueEnemigo = 'TIERRA';
+    }
+
+    combate();
+}
+
+
+function combate(){
+    if(ataqueEnemigo == ataqueJugador){
+        resultado = 'EMPATE'
+    } else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA' || ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO' || ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA'){
+        resultado = 'GANASTE'
+    } else {
+        resultado = 'PERDISTE'
+    }
+    console.log(resultado);
+    crearMensaje();
+}
+
+function crearMensaje(){
+    let seccionMensajes = document.getElementById('mensajes');
+
+
+    let parrafo = document.createElement('p')
+    parrafo.innerHTML = 'Tu mascota atacó con ' + ataqueJugador + ',' + ' Tu enemigo usó ' + ataqueEnemigo + '. ' + resultado + '.';
+
+    seccionMensajes.appendChild(parrafo);
+}
 
 function seleccionarMascotaJugador(){
     let inputHipo = document.getElementById('Hipodoge');
@@ -60,14 +97,14 @@ function seleccionarMascotaJugador(){
 
 function seleccionarMascotaEnemigo(){
 
-    let ataqueAleatorio = aleatorio(1,3);
+    let mascotaAleatoria = aleatorio(1,3);
     let spanMascotaEnemigo = document.getElementById('mascota-enemigo');
 
-    if(ataqueAleatorio == 1){
+    if(mascotaAleatoria == 1){
         spanMascotaEnemigo.innerHTML = 'Hipodoge'
-    } else if(ataqueAleatorio == 2){
+    } else if(mascotaAleatoria == 2){
         spanMascotaEnemigo.innerHTML = 'Capipepo'
-    } else if(ataqueAleatorio == 3){
+    } else {
         spanMascotaEnemigo.innerHTML = 'Ratigueya'
     }
 
