@@ -1,6 +1,5 @@
 let ataqueJugador;
 let ataqueEnemigo;
-let resultado;
 let vidasJugador = 3;
 let vidasEnemigo = 3;
 
@@ -60,13 +59,13 @@ function combate(){
     let spanVidasJugador = document.getElementById('vidas-jugador');
     let spanVidasEnemigo = document.getElementById('vidas-enemigo');
     if(ataqueEnemigo == ataqueJugador){
-        resultado = 'EMPATE'
+        crearMensaje('EMPATE')
     } else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA' || ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO' || ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA'){
-        resultado = 'GANASTE'
+        crearMensaje('GANASTE')
         vidasEnemigo--;
         spanVidasEnemigo.innerHTML = vidasEnemigo;
     } else {
-        resultado = 'PERDISTE'
+        crearMensaje('PERDISTE')
         vidasJugador--;
         spanVidasJugador.innerHTML= vidasJugador;
     }
@@ -86,8 +85,8 @@ function revisarVidas(){
 }
 
 
-function crearMensaje(){
-    let seccionMensajes = document.getElementById('mensajes');
+function crearMensaje(resultado){
+    let seccionMensajes = document.getElementById('resultado');
 
 
     let parrafo = document.createElement('p')
