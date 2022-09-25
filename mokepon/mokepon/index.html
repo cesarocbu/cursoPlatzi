@@ -5,53 +5,58 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="main.js"></script>
+    <link rel="stylesheet" href="styles.css">
     <title>Mokepon!</title>
 </head>
 <body>
-    <h1>Mokepon!🔥💧🌱</h1>
-     
     <section id="seleccionar-mascota">
-        <h2>Elige a tu mascota</h2>
-        <input type="radio" name="mascota" id="Hipodoge"/>
-        <label for="Hipodoge">Hipodoge</label> <br/>
+        <h1 class="titulo">Mokepon!</h1>
 
-        <input type="radio" name="mascota" id="Capipepo"/>
-        <label for="Capipepo">Capipepo</label> <br/>
-        
-        <input type="radio" name="mascota" id="Ratigueya"/>
-        <label for="Ratigueya">Ratigueya</label> <br/>
+        <h2 class="subtitulo">Elige a tu mascota:</h2>
+        <div class="tarjetas">
+            <input type="radio" name="mascota" id="Hipodoge"/>
+            <label  class="tarjeta-mokepon" for="Hipodoge">
+                <p>Hipodoge</p>
+                <img src="https://raw.githubusercontent.com/platzi/curso-programacion-basica/35-assets-mokepones/programar/mokepon/assets/mokepons_mokepon_hipodoge_attack.png" alt="">
+            </label> <br/>
+            <input type="radio" name="mascota" id="Capipepo"/>
+            <label class="tarjeta-mokepon" for="Capipepo">
+                <p>Capipepo</p>
+                <img src="https://raw.githubusercontent.com/platzi/curso-programacion-basica/35-assets-mokepones/programar/mokepon/assets/mokepons_mokepon_capipepo_attack.png" alt="">
+            </label> <br/>
+            <input type="radio" name="mascota" id="Ratigueya"/>
+            <label class="tarjeta-mokepon" for="Ratigueya">
+                <p>Ratigueya</p>
+                <img src="https://raw.githubusercontent.com/platzi/curso-programacion-basica/35-assets-mokepones/programar/mokepon/assets/mokepons_mokepon_ratigueya_attack.png" alt="">
+            </label> <br/>
+        </div>
 
-        <!-- <input type="radio" name="mascota" id="Langostelvis"/>
-        <label for="Langostelvis">Langostelvis</label> <br/>
-
-        <input type="radio" name="mascota" id="Tucapalma"/>
-        <label for="Tucapalma">Tucapalma</label> <br/>
-
-        <input type="radio" name="mascota" id="Pydos"/>
-        <label for="Pydos">Pydos</label> <br/> -->
-        <br>
         <button id="boton-mascota" >Seleccionar</button>
 
     </section>
     <section id="seleccionar-ataque">
-        <h2>Elige tu ataque</h2>
-        <p>Tu mascota <span id="mascota-jugador"> </span> tiene <span id="vidas-jugador">3</span> vidas</p>
-        <p>La mascota <span id="mascota-enemigo"> </span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
-        <p>
-            <button id="boton-fuego" >Fuego 🔥</button>
-            <button id="boton-agua">Agua 💧</button>
-            <button id="boton-tierra">Tierra 🌱</button>
-        </p>
-    </section>
+        <h1 class="titulo">Mokepon!</h1>
 
-    <section id="mensajes">
-        
-    </section>
+        <h2 class="subtitulo">Elige tu ataque:</h2>
 
-    <section id="reiniciar">
-        <button id="boton-reiniciar">Reiniciar</button>
-    </section>
+        <div>
+            <button id="boton-fuego" class="boton-de-ataque">Fuego 🔥</button>
+            <button id="boton-agua" class="boton-de-ataque">Agua 💧</button>
+            <button id="boton-tierra" class="boton-de-ataque">Tierra 🌱</button>
+        </div>
 
-   
+        <div>
+            <section id="mensajes">
+            </section>
+            <section id="reiniciar">
+                <button id="boton-reiniciar">Reiniciar</button>
+            </section>
+        </div>
+
+        <div>
+            <p>Tu mascota <span id="mascota-jugador"> </span> tiene <span id="vidas-jugador">3</span> vidas</p>
+            <p>La mascota <span id="mascota-enemigo"> </span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
+        </div>
+    </section>
 </body>
 </html>

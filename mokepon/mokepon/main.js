@@ -7,7 +7,6 @@ let vidasEnemigo = 3;
 
 
 function iniciarJuego(){
-    
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
     sectionSeleccionarAtaque.style.display = 'none';
 
@@ -124,7 +123,7 @@ function seleccionarMascotaJugador(){
     sectionSeleccionarMascota.style.display = 'none';
 
     let sectionSeleccionarAtaque = document.getElementById('seleccionar-ataque');
-    sectionSeleccionarAtaque.style.display = 'block';
+    sectionSeleccionarAtaque.style.display = 'flex';
 
     let inputHipo = document.getElementById('Hipodoge');
     let inputCapi = document.getElementById('Capipepo');
@@ -140,18 +139,9 @@ function seleccionarMascotaJugador(){
         spanMascotaJugador.innerHTML = 'Capipepo'
     } else if(inputRati.checked){
         spanMascotaJugador.innerHTML = 'Ratigueya'
-    } // else if(inputLango.checked){
-    //     spanMascotaJugador.innerHTML = 'Langostelvis'
-    // } else if(inputLango.checked){
-    //     spanMascotaJugador.innerHTML = 'Tucapalma'
-    // } else if(inputpydos.checked){
-    //     spanMascotaJugador.innerHTML = 'Pydos'
-    // }
-     else{
+    } else{
         alert("Debes seleccionar una mascota")
     }
-    
-
     seleccionarMascotaEnemigo();
 
 }
