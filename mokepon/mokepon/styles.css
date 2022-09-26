@@ -91,7 +91,11 @@ input:checked+label {
     flex-direction: column;
     align-items: center;
 }
-
+.botones-ataques{
+    display: flex;
+    width: 400px;
+    justify-content: space-around;
+}
 .boton-de-ataque{
     background-color: #F0E3CA;
     color: #1B1A17;
@@ -104,4 +108,74 @@ input:checked+label {
     transform: scale(1.1);
     transition-duration: .3s;
     cursor: pointer;
+}
+
+#mensajes{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-around;
+    color: #ffffff;
+    width: 250px;
+    background: #A35709;
+    padding: 20px;
+    margin-top: 10px;
+    border-radius: 20px;
+}
+
+.boton-reinicio{
+    border: none;
+    margin-top: 10px;
+    background: transparent;
+    color: #ffffff;
+    
+}
+
+.boton-reinicio:hover{
+    transform: scale(1.1);
+    transition-duration: .3s;
+    cursor: pointer;
+}
+
+.cajas-ataques{
+    margin-top: 30px;
+    display: grid;
+    grid-template-columns: 100px 100px;
+  
+}
+
+.vidas-jugador, .vidas-enemigo{
+    font-size: 20px;
+    margin-bottom: 0;
+}
+
+.caja-jugador, .caja-enemigo{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media (max-width: 360px){
+
+    #seleccionar-mascota{
+        margin-top: 30px;
+    }
+
+    .titulo{
+        margin-top: 50px;
+    }
+    .tarjetas{
+        flex-direction: column;
+    }
+    .button-mascota{
+        margin-top: 10px;
+    }
+
+
+    .botones-ataques{
+        width: 250px;
+        display: flex;
+        justify-content: space-around;
+    }
+
 }
