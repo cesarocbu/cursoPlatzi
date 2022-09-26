@@ -24,6 +24,7 @@ const ataqueEne = document.getElementById('ataque-enemigo');
 //crearMensajeFinal
 const parrafo = document.createElement('p')
 
+let mokepones = [];
 let ataqueJugador;
 let ataqueEnemigo;
 let vidasJugador = 3;
@@ -35,16 +36,37 @@ class Mokepon {
         this.nombre = nombre;
         this.foto = foto;
         this.vida = vida;
+        this.ataques = [];
     }
 }
 
-let Hipodoge = new Mokepon('Hipodoge', 'https://raw.githubusercontent.com/platzi/curso-programacion-basica/35-assets-mokepones/programar/mokepon/assets/mokepons_mokepon_hipodoge_attack.png', 5)
+let hipodoge = new Mokepon('Hipodoge', 'https://raw.githubusercontent.com/platzi/curso-programacion-basica/35-assets-mokepones/programar/mokepon/assets/mokepons_mokepon_hipodoge_attack.png', 5)
 
-let Capipepo = new Mokepon('Capipepo', 'https://raw.githubusercontent.com/platzi/curso-programacion-basica/35-assets-mokepones/programar/mokepon/assets/mokepons_mokepon_capipepo_attack.png', 4)
+let capipepo = new Mokepon('Capipepo', 'https://raw.githubusercontent.com/platzi/curso-programacion-basica/35-assets-mokepones/programar/mokepon/assets/mokepons_mokepon_capipepo_attack.png', 4)
 
-let Ratigueya = new Mokepon('Ratigueya', 'https://raw.githubusercontent.com/platzi/curso-programacion-basica/35-assets-mokepones/programar/mokepon/assets/mokepons_mokepon_ratigueya_attack.png', 5)
+let ratigueya = new Mokepon('Ratigueya', 'https://raw.githubusercontent.com/platzi/curso-programacion-basica/35-assets-mokepones/programar/mokepon/assets/mokepons_mokepon_ratigueya_attack.png', 5)
 
-
+hipodoge.ataques.push(
+    {nombre: 'AGUA', id: 'boton-agua'},
+    {nombre: 'AGUA', id: 'boton-agua'},
+    {nombre: 'AGUA', id: 'boton-agua'},
+    {nombre: 'TIERRA', id: 'boton-tierra'},
+    {nombre: 'FUEGO', id: 'boton-fuego'}
+)
+capipepo.ataques.push(
+    {nombre: 'TIERRA', id: 'boton-tierra'},
+    {nombre: 'TIERRA', id: 'boton-tierra'},
+    {nombre: 'TIERRA', id: 'boton-tierra'},
+    {nombre: 'FUEGO', id: 'boton-fuego'},
+    {nombre: 'AGUA', id: 'boton-agua'}
+)
+ratigueya.ataques.push(
+    {nombre: 'FUEGO', id: 'boton-fuego'},
+    {nombre: 'FUEGO', id: 'boton-fuego'},
+    {nombre: 'FUEGO', id: 'boton-fuego'},
+    {nombre: 'AGUA', id: 'boton-agua'},
+    {nombre: 'TIERRA', id: 'boton-tierra'}
+)
 
 function iniciarJuego(){
     sectionSeleccionarAtaque.style.display = 'none';
