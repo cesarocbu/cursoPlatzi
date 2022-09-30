@@ -100,7 +100,8 @@ input:checked+label {
     background-color: #F0E3CA;
     color: #1B1A17;
     padding: 5px;
-    margin-bottom: 30px;;
+    margin-bottom: 30px;
+    margin: 10px;
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
