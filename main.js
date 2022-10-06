@@ -104,6 +104,11 @@ function iniciarJuego(){
 
 
 function combate(){
+    for (let i = 0; i < ataqueJugador.length; i++) {
+        console.log(ataqueJugador[i]);
+        
+    }
+
     if(ataqueEnemigo == ataqueJugador){
         crearMensaje('EMPATE')
     } else if(ataqueJugador == 'FUEGO' && ataqueEnemigo == 'TIERRA' || ataqueJugador == 'AGUA' && ataqueEnemigo == 'FUEGO' || ataqueJugador == 'TIERRA' && ataqueEnemigo == 'AGUA'){
@@ -232,9 +237,14 @@ function ataqueAleatorioEnemigo() {
         ataqueEnemigo.push('TIERRA');
     }
     console.log(ataqueEnemigo);
-    combate();
+    iniciarPelea();
 }
 
+function iniciarPelea() {
+    if(ataqueJugador.length === 5){
+        combate();
+    }
+}
 
 
 function reiniciarJuego (){
