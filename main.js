@@ -106,7 +106,6 @@ function iniciarJuego(){
 function combate(){
     for (let i = 0; i < ataqueJugador.length; i++) {
         console.log(ataqueJugador[i]);
-        
     }
 
     if(ataqueEnemigo == ataqueJugador){
