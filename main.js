@@ -31,6 +31,7 @@ let ataqueJugador = [];
 let ataqueEnemigo = [];
 let opcionDeMokepones;
 let mascotaJugador;
+let objetoMascotaJugador;
 let ataquesMokepon;
 let ataquesMokeponEnemigo;
 let vidasJugador = 3;
@@ -46,7 +47,10 @@ let indexAtaqueJugador;
 let indexAtaqueEnemigo;
 let victoriasJugador = 0;
 let victoriasEnemigo = 0;
-let lienzo = mapa.getContext("2d")
+let lienzo = mapa.getContext("2d");
+let intervalo;
+let backgroundMapa = new Image();
+backgroundMapa.src = 'https://static.platzi.com/media/user_upload/mokemap-ca51ea18-7ac8-492f-be96-6181d766a99d.jpg'
 
 class Mokepon {
     constructor(nombre, foto, vida,){
@@ -60,6 +64,9 @@ class Mokepon {
         this.alto = 80
         this.mapaFoto = new Image();
         this.mapaFoto.src = foto;
+        this.velocidadX = 0;
+        this.velocidadY = 0;
+
     }
 }
 
@@ -185,7 +192,7 @@ function crearMensajeFinal(resultadoFinal){
 function seleccionarMascotaJugador(){
     sectionSeleccionarMascota.style.display = 'none';
     //sectionSeleccionarAtaque.style.display = 'flex';
-    sectionVerMapa.style.display = 'flex';
+    
 
     if(inputHipo.checked){
         spanMascotaJugador.innerHTML = inputHipo.id;
@@ -200,6 +207,8 @@ function seleccionarMascotaJugador(){
         alert("Debes seleccionar una mascota")
     }
     extraerAtaques(mascotaJugador);
+    sectionVerMapa.style.display = 'flex';
+    iniciarMapa();
     seleccionarMascotaEnemigo();
 }
 
@@ -289,36 +298,82 @@ function aleatorio(min, max) {
     return Math.floor(Math.random() * (max - min + 1) + min);
 }
 
-function pintarPersonaje(){
+function pintarCanvas(){
+
+    objetoMascotaJugador.x = objetoMascotaJugador.x + objetoMascotaJugador.velocidadX
+    objetoMascotaJugador.y = objetoMascotaJugador.y + objetoMascotaJugador.velocidadY
     lienzo.clearRect(0,0, mapa.width, mapa.height);
     lienzo.drawImage(
-        capipepo.mapaFoto,
-        capipepo.x,
-        capipepo.y,
-        capipepo.ancho,
-        capipepo.alto
+        backgroundMapa,
+        0,
+        0,
+        mapa.width,
+        mapa.height
+    )
+    lienzo.drawImage(
+        objetoMascotaJugador.mapaFoto,
+        objetoMascotaJugador.x,
+        objetoMascotaJugador.y,
+        objetoMascotaJugador.ancho,
+        objetoMascotaJugador.alto
     )
 }
 
 function moverDerecha(){
-    capipepo.x = capipepo.x + 5
-    pintarPersonaje();
+    objetoMascotaJugador.velocidadX = 2;
 }
 
 function moverIzquierda(){
-    capipepo.x = capipepo.x - 5
-    pintarPersonaje();
+    objetoMascotaJugador.velocidadX = -2;
 }
 
 function moverArriba(){
-    capipepo.y = capipepo.y - 5
-    pintarPersonaje();
+    objetoMascotaJugador.velocidadY = -2;
 }
 
 function moverAbajo(){
-    capipepo.y = capipepo.y + 5
-    pintarPersonaje();
+    objetoMascotaJugador.velocidadY = 2;
 }
 
+function detenerMovimiento(){
+    objetoMascotaJugador.velocidadX = 0;
+    objetoMascotaJugador.velocidadY = 0;
+}
+
+function teclaPresionada(){
+    switch (event.key) {
+        case 'ArrowUp':
+            moverArriba()
+            break
+        case 'ArrowDown':
+            moverAbajo()
+            break
+        case 'ArrowLeft':
+            moverIzquierda()
+            break
+        case 'ArrowRight':
+            moverDerecha()
+            break
+        default:
+            break
+    }
+}
+
+function iniciarMapa(){
+    mapa.width = 600
+    mapa.height = 400
+    objetoMascotaJugador = obtenerObjetoMascota(mascotaJugador)
+    intervalo = setInterval(pintarCanvas, 15)
+    window.addEventListener('keydown', teclaPresionada)
+    window.addEventListener('keyup', detenerMovimiento)
+}
+
+function obtenerObjetoMascota(){
+    for (let i = 0; i < mokepones.length; i++) {
+        if (mascotaJugador === mokepones[i].nombre) {
+            return mokepones[i]
+        }
+    }
+}
 
 window.addEventListener('load', iniciarJuego);

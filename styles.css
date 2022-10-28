@@ -171,9 +171,11 @@ input:checked+label {
     display: flex;
 }
 
-#ver-mapa .botones button{
+#ver-mapa h4{
     margin-right: 20px;
-    margin-top: 10px;
+    margin-bottom: 20px;
+    color: black;
+    font-weight: 100;
 }
 
 @media (max-width: 420px){
