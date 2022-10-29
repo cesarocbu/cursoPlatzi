@@ -50,11 +50,11 @@ let victoriasEnemigo = 0;
 let lienzo = mapa.getContext("2d");
 let intervalo;
 let backgroundMapa = new Image();
-backgroundMapa.src = 'https://static.platzi.com/media/user_upload/mokemap-ca51ea18-7ac8-492f-be96-6181d766a99d.jpg'
+backgroundMapa.src = './assets/mokemap.png'
 
 class Mokepon {
-    constructor(nombre, foto, vida,){
-        this.nombre = nombre;
+    constructor(nombre, foto, vida, fotoMapa, x = 10, y = 10){
+    this.nombre = nombre;
         this.foto = foto;
         this.vida = vida;
         this.ataques = [];
@@ -63,18 +63,18 @@ class Mokepon {
         this.ancho = 80
         this.alto = 80
         this.mapaFoto = new Image();
-        this.mapaFoto.src = foto;
+        this.mapaFoto.src = fotoMapa;
         this.velocidadX = 0;
         this.velocidadY = 0;
 
     }
 }
 
-let hipodoge = new Mokepon('Hipodoge', 'https://raw.githubusercontent.com/platzi/curso-programacion-basica/35-assets-mokepones/programar/mokepon/assets/mokepons_mokepon_hipodoge_attack.png', 5)
+let hipodoge = new Mokepon('Hipodoge', './assets/mokepons_mokepon_hipodoge_attack.png', 5)
 
-let capipepo = new Mokepon('Capipepo', 'https://raw.githubusercontent.com/platzi/curso-programacion-basica/35-assets-mokepones/programar/mokepon/assets/mokepons_mokepon_capipepo_attack.png', 4)
+let capipepo = new Mokepon('Capipepo', './assets/mokepons_mokepon_capipepo_attack.png', 4)
 
-let ratigueya = new Mokepon('Ratigueya', 'https://raw.githubusercontent.com/platzi/curso-programacion-basica/35-assets-mokepones/programar/mokepon/assets/mokepons_mokepon_ratigueya_attack.png', 5)
+let ratigueya = new Mokepon('Ratigueya', './assets/mokepons_mokepon_ratigueya_attack.png', 5)
 
 hipodoge.ataques.push(
     {nombre: 'AGUA', id: 'boton-agua'},
