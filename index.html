@@ -20,6 +20,12 @@
         <h2 class="subtitulo">Recorre el mapa con tu Mokepon!</h2>
         <h4>Utiliza las flechas de tu teclado.</h4>  
         <canvas id="mapa"></canvas>
+        <div class="botones">
+            <button onmousedown="moverArriba()" onmouseup="detenerMovimiento()">Arriba</button>
+            <button onmousedown="moverAbajo()" onmouseup="detenerMovimiento()">Abajo</button>
+            <button onmousedown="moverIzquierda()" onmouseup="detenerMovimiento()">Izquierda</button>
+            <button onmousedown="moverDerecha()" onmouseup="detenerMovimiento()">Derecha</button>
+        </div>
     </section>
 
     <section id="seleccionar-ataque">
