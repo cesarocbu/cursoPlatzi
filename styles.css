@@ -24,7 +24,7 @@ body{
 
 .titulo{
     color: white;
-    font-size: 60px;
+    font-size: 90px;
     padding-bottom: 30px;
     text-shadow: 3px -1px 17px rgba(0,0,0,0.6);
 }
@@ -36,14 +36,14 @@ body{
 
 .tarjetas{
     display: flex;
-    gap: 10px;
+    gap: 20px;
 }
 
 
 .tarjeta-mokepon{
     
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 130px;
     background: #A35709;
     padding: 10px;
     border-radius: 15px;
@@ -51,7 +51,7 @@ body{
 }
 
 .tarjeta-mokepon img {
-    width: 100px;
+    width: 120px;
 }
 
 .tarjeta-mokepon:hover{
@@ -65,8 +65,9 @@ body{
 .button-mascota{
     background-color: #F0E3CA;
     color: #1B1A17;
-    padding: 5px;
+    padding: 8px;
     margin-top: 50px;
+    border-radius: 10px;
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
@@ -90,6 +91,7 @@ input:checked+label {
     display: flex;
     flex-direction: column;
     align-items: center;
+    margin-top: 250px;
 }
 .botones-ataques{
     display: flex;
@@ -99,8 +101,9 @@ input:checked+label {
 .boton-de-ataque{
     background-color: #F0E3CA;
     color: #1B1A17;
-    padding: 5px;
+    padding: 8px;
     margin-bottom: 30px;
+    border-radius: 10px;
     margin: 10px;
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
@@ -120,7 +123,7 @@ input:checked+label {
     width: 250px;
     background: #A35709;
     padding: 20px;
-    margin-top: 10px;
+    margin-top: 30px;
     border-radius: 20px;
 }
 
@@ -161,19 +164,18 @@ input:checked+label {
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    margin-top: 30px;
 }
 
 
-#ver-mapa .botones{
-    display: flex;
-}
 
 #ver-mapa button{
     margin-right: 10px;
     background-color: #F0E3CA;
     color: #1B1A17;
-    padding: 5px;
-    margin-top: 50px;
+    padding: 8px;
+    border-radius: 10px;
+    margin-top: 20px;
     box-shadow: 0px 10px 13px -7px #000000, 5px 5px 15px 5px rgba(0,0,0,0);
 }
 
@@ -182,6 +184,17 @@ input:checked+label {
     transition-duration: .3s;
     cursor: pointer;
 }
+
+#ver-mapa .botones {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#ver-mapa .botones .arriba {
+    width: 60px;
+}
+
 
 #ver-mapa h4{
     margin-right: 20px;
