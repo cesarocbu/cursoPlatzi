@@ -209,7 +209,7 @@ input:checked+label {
     }
 
     .titulo{
-        margin-top: 50px;
+        margin-top: -100px;
         font-size: 60px;
     }
     .tarjetas{
@@ -222,13 +222,13 @@ input:checked+label {
 
     .botones-ataques{
         width: 250px;
-        margin-top: -80px;
         flex-direction: column;
         justify-content: space-around;
+        align-items: center;
     }
 
     .boton-de-ataque{
-        width: 40px;
+        width: 100px;
 
     }
 
