@@ -168,7 +168,6 @@ input:checked+label {
 }
 
 
-
 #ver-mapa button{
     margin-right: 10px;
     background-color: #F0E3CA;
@@ -226,6 +225,11 @@ input:checked+label {
         display: flex;
         justify-content: space-around;
     }
+
+    #ver-mapa .subtitulo{
+        font-size: 20px;
+    } 
+    
 
 }
 
