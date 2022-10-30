@@ -203,22 +203,23 @@ input:checked+label {
     font-weight: 100;
 }
 
-@media (max-width: 420px){
+@media (max-width: 590px){
 
     #seleccionar-mascota{
-        margin-top: 30px;
+        margin-top: 0px;
     }
 
     .titulo{
         margin-top: 50px;
+        font-size: 60px;
     }
     .tarjetas{
         flex-direction: column;
+        margin-top: 0px;
     }
     .button-mascota{
-        margin-top: 10px;
+        margin-top: 0px;
     }
-
 
     .botones-ataques{
         width: 250px;
