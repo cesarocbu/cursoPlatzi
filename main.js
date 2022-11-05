@@ -385,15 +385,28 @@ function pintarCanvas(){
         mapa.height
     )
     objetoMascotaJugador.pintarMokepon();
+
+    enviarPosicion(objetoMascotaJugador.x, objetoMascotaJugador.y)
+
     hipodogeEnemigo.pintarMokepon();
     capipepoEnemigo.pintarMokepon();
     ratigueyaEnemigo.pintarMokepon();
-    
     if(objetoMascotaJugador.velocidadX !== 0 || objetoMascotaJugador.velocidadY !== 0){
         revisarColision(hipodogeEnemigo)
         revisarColision(capipepoEnemigo)
         revisarColision(ratigueyaEnemigo)
     }
+}
+
+function enviarPosicion(x,y){
+    fetch(`http://localhost:8080/mokepon/${jugadorId}/posicion`, {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify({
+            x,
+            y
+        })
+    })
 }
 
 function moverDerecha(){
