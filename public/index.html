@@ -21,11 +21,11 @@
         <h4>Utiliza las flechas de tu teclado.</h4>  
         <canvas id="mapa"></canvas>
         <div class="botones">
-            <button class="arriba" onmousedown="moverArriba()" onmouseup="detenerMovimiento()">Arriba</button>
+            <button class="arriba" ontouchstart="moverArriba()" ontouchend="detenerMovimiento()" onmousedown="moverArriba()" onmouseup="detenerMovimiento()">Arriba</button>
             <div class="botones-abajo">
-                <button onmousedown="moverIzquierda()" onmouseup="detenerMovimiento()">Izquierda</button>
-                <button onmousedown="moverAbajo()" onmouseup="detenerMovimiento()">Abajo</button>
-                <button onmousedown="moverDerecha()" onmouseup="detenerMovimiento()">Derecha</button>
+                <button ontouchstart="moverIzquierda()" ontouchend="detenerMovimiento()" onmousedown="moverIzquierda()" onmouseup="detenerMovimiento()">Izquierda</button>
+                <button ontouchstart="moverAbajo()" ontouchend="detenerMovimiento()" onmousedown="moverAbajo()" onmouseup="detenerMovimiento()">Abajo</button>
+                <button ontouchstart="moverDerecha()" ontouchend="detenerMovimiento()" onmousedown="moverDerecha()" onmouseup="detenerMovimiento()">Derecha</button>
             </div>
         </div>
     </section>
